@@ -54,6 +54,11 @@ li:last-of-type {
     color: #4b4c5f;
 }
 
+.question:hover, .question:focus {
+    color: #f47b56;
+    cursor: pointer;
+}
+
 .question::after {
     content: "";
     background: url("images/icon-arrow-down.svg") center no-repeat;
@@ -71,6 +76,10 @@ li:last-of-type {
 .open .question {
     font-weight: 700;
     color: #1e1f36;
+}
+
+.open .question:hover, .open .question:focus {
+    color: #f47b56;
 }
 
 .open .question::after {
