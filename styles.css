@@ -67,10 +67,14 @@ li:last-of-type {
     position: absolute;
     right: 0;
     top: 0;
+    transition: transform 0.3s;
 }
 
 .answer {
-    display: none;
+    color: #787887;
+    height: 0;
+    padding-right: 1.5em;
+    overflow: hidden;
 }
 
 .open .question {
@@ -87,7 +91,6 @@ li:last-of-type {
 }
 
 .open .answer {
-    display: block;
-    color: #787887;
-    padding: 1em 1.5em 0 0;
+    height: unset;
+    padding-top: 1em
 }
