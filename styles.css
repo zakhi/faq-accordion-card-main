@@ -25,6 +25,7 @@ main {
     margin: 12.33em 2em 7em;
     padding: 0 2em 2em;
     border-radius: 2em;
+    box-shadow: 0 50px 50px -20px rgba(58, 18, 122, 0.5);
 }
 
 figure {
@@ -72,11 +73,6 @@ li:last-of-type {
     color: #4b4c5f;
 }
 
-.question:hover, .question:focus {
-    color: #f47b56;
-    cursor: pointer;
-}
-
 .question::after {
     content: "";
     background: url("images/icon-arrow-down.svg") center no-repeat;
@@ -98,10 +94,6 @@ li:last-of-type {
 .open .question {
     font-weight: 700;
     color: #1e1f36;
-}
-
-.open .question:hover, .open .question:focus {
-    color: #f47b56;
 }
 
 .open .question::after {
