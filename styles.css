@@ -7,43 +7,49 @@
 }
 
 html {
-    font-size: 10px;
+    font-size: 62.5%;
+    height: 100%;
 }
 
 body {
     font-family: "Kumbh Sans", sans-serif;
-    background: linear-gradient(#af67e9, #6565e7);
+    background: linear-gradient(#af67e9, #6565e7) no-repeat fixed;
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.5;
     color: #1e1f36;
-    height: 100vh;
+    height: 100%;
 }
 
 main {
     background: white;
-    margin: 12.33em 2em 7em;
-    padding: 0 2em 2em;
+    margin: 148px 2em;
+    padding: 2em;
     border-radius: 2em;
     box-shadow: 0 50px 50px -20px rgba(58, 18, 122, 0.5);
+    position: relative;
 }
 
-figure {
-    text-align: center;
-}
-
-figure::after {
+figure::before {
     content: "";
-    display: block;
+    position: absolute;
     background: url("images/bg-pattern-mobile.svg");
     width: 240px;
     height: 104px;
-    margin: -100px auto 0;
+    top: 0;
+    left: 50%;
+    margin-left: -120px;
 }
 
 img {
-    margin-top: -108px;
-    margin-left: -25px;
+    position: absolute;
+    top: -108px;
+    left: 50%;
+    margin-left: -147px;
+}
+
+.desktop-only {
+    display: none;
 }
 
 h1 {
@@ -51,7 +57,7 @@ h1 {
     font-size: 3.2rem;
     line-height: 1;
     text-align: center;
-    margin: 0.85em 0 0.625em;
+    margin: max(3.34em, 115px) 0 0.625em;
 }
 
 ul {
@@ -63,20 +69,18 @@ li {
     padding: 1.5em 0;
 }
 
-li:last-of-type {
-    border: 0;
-}
-
 .question {
     font-size: 1.3rem;
     position: relative;
     color: #4b4c5f;
+    cursor: pointer;
 }
 
 .question::after {
     content: "";
     background: url("images/icon-arrow-down.svg") center no-repeat;
-    width: 10px;
+    background-size: 100%;
+    width: 0.62em;
     height: 1.2em;
     position: absolute;
     right: 0;
@@ -87,7 +91,7 @@ li:last-of-type {
 .answer {
     color: #787887;
     height: 0;
-    padding-right: 1.5em;
+    padding-right: 2em;
     overflow: hidden;
 }
 
@@ -103,4 +107,61 @@ li:last-of-type {
 .open .answer {
     height: unset;
     padding-top: 1em
+}
+
+@media (min-width: 1000px) {
+    h1 {
+        text-align: left;
+        margin: 0 0 0.78em;
+    }
+
+    main {
+        width: 920px;
+        margin: 10.8em auto;
+        padding: 5.4em 7.9em 6.9em 40em;
+    }
+
+    figure::before {
+        background: url("images/bg-pattern-desktop.svg") top -294px left -576px;
+        width: 388px;
+        height: 100%;
+        left: 0;
+        margin: 0;
+    }
+
+    figure::after {
+        content: "";
+        background: url("images/illustration-box-desktop.svg");
+        position: absolute;
+        width: 191px;
+        height: 184px;
+        top: 206px;
+        left: -93px;
+    }
+
+    img {
+        width: 388px;
+        height: 359px;
+        object-fit: cover;
+        object-position: right;
+        top: 70px;
+        left: 0;
+        margin: 0;
+    }
+
+    .desktop-only {
+        display: initial;
+    }
+
+    .mobile-only {
+        display: none;
+    }
+
+    .question {
+        font-size: 1.4rem;
+    }
+
+    .question:hover, .question:focus {
+        color: #f47b56;
+    }
 }
